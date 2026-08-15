@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cyd8qrbk48hb3"]
+
+[ext_resource type="Texture2D" uid="uid://c04y3ddhyt4r4" path="res://sprites/hit.png" id="1_caylm"]
+[ext_resource type="Script" uid="uid://cxpwu877dj8q1" path="res://impact.gd" id="2_6l1y3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tn3k"]
+atlas = ExtResource("1_caylm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kuxu"]
+atlas = ExtResource("1_caylm")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u61rl"]
+atlas = ExtResource("1_caylm")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqxkb"]
+atlas = ExtResource("1_caylm")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvv3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tn3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kuxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u61rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqxkb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="Impact" type="AnimatedSprite3D" unique_id=218128902]
+sprite_frames = SubResource("SpriteFrames_jvv3u")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_6l1y3")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

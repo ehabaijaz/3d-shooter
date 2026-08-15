@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://fu1amsumtj2d"]
+
+[ext_resource type="Script" uid="uid://o8lug1by2ccg" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://cyd8qrbk48hb3" path="res://impact.tscn" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://cfhuo8e7sk3nx" path="res://sprites/crosshair.png" id="2_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+
+[node name="Player" type="CharacterBody3D" unique_id=2127627102]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_4flbx")
+impact_animation = ExtResource("2_i3pqv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1285436515]
+shape = SubResource("CapsuleShape3D_sh265")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1302662011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1464185593]
+target_position = Vector3(0, 0, -20)
+collision_mask = 5
+
+[node name="Crosshair" type="Sprite3D" parent="Camera3D" unique_id=684607561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.635964)
+texture = ExtResource("2_onrkg")

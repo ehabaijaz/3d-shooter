@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Shooter"
-run/main_scene="uid://cl5bmspnu6y1x"
+run/main_scene="uid://d0d3n68s8wabo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
