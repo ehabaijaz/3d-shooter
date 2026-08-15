@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://o8lug1by2ccg" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://cyd8qrbk48hb3" path="res://impact.tscn" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://cfhuo8e7sk3nx" path="res://sprites/crosshair.png" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://cqk4k08fy0uhv" path="res://blaster.tscn" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://ih442nrtjhmv" path="res://dual_shooter.tscn" id="5_sweqy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -25,3 +27,14 @@ collision_mask = 5
 [node name="Crosshair" type="Sprite3D" parent="Camera3D" unique_id=684607561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.635964)
 texture = ExtResource("2_onrkg")
+
+[node name="Guns" type="Node3D" parent="Camera3D" unique_id=1198259313]
+
+[node name="Blaster" parent="Camera3D/Guns" unique_id=1236075895 instance=ExtResource("4_hqtel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -1.105, -1.04)
+max_size = Vector3(0.7, 0.7, 0.7)
+
+[node name="DualShooter" parent="Camera3D/Guns" unique_id=41218633 instance=ExtResource("5_sweqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.269472, -0.845, -0.745)
+visible = false
+max_size = Vector3(0.7, 0.7, 0.7)
