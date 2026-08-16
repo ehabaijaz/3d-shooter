@@ -4,6 +4,8 @@ var direction : Vector2
 var speed := 10
 var mouse_acceleration := Vector2(0.001,0.001)
 enum Gun {BLASTER,DUAL}
+var jump_strength := 8.0
+var gravity := 10.0
 var current_gun : Gun = Gun.BLASTER:
 	set(value):
 		current_gun = value
@@ -17,7 +19,9 @@ var current_gun : Gun = Gun.BLASTER:
 @export var impact_animation : PackedScene
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	for gun in $Camera3D/Guns.get_children():
+		gun.hide()
+	$Camera3D/Guns.get_child(current_gun).show()
 
 
 func _input(event):
@@ -27,7 +31,11 @@ func _input(event):
 		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -PI/3, PI/3)
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed:
-			$Camera3D/Guns/DualShooter.nozzle_burst()
+			$Camera3D/Guns.get_child(current_gun).nozzle_burst()
+			var tween = create_tween()
+			tween.tween_property($Camera3D/Guns.get_child(current_gun), 'position', $Camera3D/Guns.get_child(current_gun).position + Vector3(0,0,0.1), 0.1)
+			tween.tween_property($Camera3D/Guns.get_child(current_gun), 'position', $Camera3D/Guns.get_child(current_gun).position, 0.2)
+			
 			var collider = $Camera3D/RayCast3D.get_collider()
 			if collider:
 				var impact = impact_animation.instantiate()
@@ -35,6 +43,10 @@ func _input(event):
 				var pos = $Camera3D/RayCast3D.get_collision_point()
 				impact.position = pos + Vector3(randf_range(-0.5,0.5),randf_range(-0.5,0.5),randf_range(-0.5,0.5))
 				impact.look_at($Camera3D.global_transform.origin)
+				if 'hit' in collider:
+					collider.hit()
+				
+				
 				
 				
 func get_input():
@@ -46,10 +58,19 @@ func get_input():
 	
 	if Input.is_action_just_pressed('toggle_weapon'):
 		current_gun = posmod(current_gun + 1, Gun.size()) as Gun
-		
 	
+	if Input.is_action_just_pressed("jump"):
+		velocity.y = jump_strength
+	
+func apply_gravity(delta):
+	if not is_on_floor():
+		velocity.y -= gravity * delta
 	
 func _physics_process(delta: float)-> void:
 	get_input()
+	apply_gravity(delta)
 	move_and_slide()
 	$Camera3D/RayCast3D.get_collider()
+
+func hit():
+	pass

@@ -1,0 +1,17 @@
+[gd_resource type="VisualShader" format=3 uid="uid://duqklnitix204"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_cr46e"]
+parameter_name = "Color"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_cr46e"]
+parameter_name = "Progress"
+hint = 1
+default_value_enabled = true
+
+[resource]
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_cr46e")
+nodes/fragment/2/position = Vector2(16, 96)
+nodes/fragment/3/node = SubResource("VisualShaderNodeFloatParameter_cr46e")
+nodes/fragment/3/position = Vector2(80, 304)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 0, 0, 1)
