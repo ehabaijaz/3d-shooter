@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cpyrroimqtgv6"]
+
+[ext_resource type="PackedScene" uid="uid://d0d3n68s8wabo" path="res://scenes/game.tscn" id="1_3bmlt"]
+[ext_resource type="PackedScene" uid="uid://botxu41putvxb" path="res://scenes/enemy.tscn" id="2_pbc48"]
+[ext_resource type="PackedScene" uid="uid://ca66ek5a3153i" path="res://scenes/platform_large.tscn" id="3_eqxsl"]
+
+[node name="Level 2" unique_id=413540681 instance=ExtResource("1_3bmlt")]
+
+[node name="Enemy" parent="." index="14" unique_id=570550541]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.28270054, 0.9852954, -10.664966)
+
+[node name="Enemy2" parent="." index="15" unique_id=460149250]
+transform = Transform3D(0.9999062, 0.010088111, 0.009264501, -0.010173396, 0.9999058, 0.009203258, -0.009170769, -0.009296664, 0.99991477, -11.421337, 0.97255754, 6.354018)
+
+[node name="Enemy4" parent="." index="16" unique_id=1982860416 instance=ExtResource("2_pbc48")]
+transform = Transform3D(0.9999062, 0.010088111, 0.009264501, -0.010173396, 0.9999058, 0.009203258, -0.009170769, -0.009296664, 0.99991477, -15.505793, 0.97255754, 6.354018)
+
+[node name="Enemy5" parent="." index="17" unique_id=1871332007 instance=ExtResource("2_pbc48")]
+transform = Transform3D(0.009170771, 0.009296665, -0.9999149, -0.010173397, 0.99990594, 0.009203259, 0.9999063, 0.010088112, 0.009264559, -15.505793, 0.97255754, 2.3397665)
+
+[node name="Enemy7" parent="." index="18" unique_id=1018685535 instance=ExtResource("2_pbc48")]
+transform = Transform3D(0.009170771, 0.009296665, -0.9999149, -0.010173397, 0.99990594, 0.009203259, 0.9999063, 0.010088112, 0.009264559, -7.8666763, 0.97255754, 11.158453)
+
+[node name="Enemy8" parent="." index="19" unique_id=988274117 instance=ExtResource("2_pbc48")]
+transform = Transform3D(-0.009170857, -0.009296668, 0.9999148, -0.010173396, 0.9999058, 0.009203259, -0.9999062, -0.01008811, -0.009264646, 2.1220703, 0.97255754, 11.658426)
+script = null
+
+[node name="Enemy6" parent="." index="20" unique_id=381989495 instance=ExtResource("2_pbc48")]
+transform = Transform3D(0.009170725, 0.009296664, -0.99991477, -0.010173396, 0.9999058, 0.009203258, 0.9999063, 0.010088112, 0.009264458, -15.505793, 0.97255754, -1.6578021)
+
+[node name="Enemy3" parent="." index="21" unique_id=533537692 instance=ExtResource("2_pbc48")]
+transform = Transform3D(0.9999062, 0.010088111, 0.009264501, -0.010173396, 0.9999058, 0.009203258, -0.009170769, -0.009296664, 0.99991477, -5.3553305, 0.97255754, -0.32129097)
+
+[node name="PlatformLarge2" parent="." index="22" unique_id=1381492469 instance=ExtResource("3_eqxsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.517445, 0, 0.38741112)

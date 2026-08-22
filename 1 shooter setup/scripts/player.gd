@@ -6,6 +6,9 @@ var mouse_acceleration := Vector2(0.001,0.001)
 enum Gun {BLASTER,DUAL}
 var jump_strength := 8.0
 var gravity := 10.0
+var health := 100
+
+@onready var default_gun_pos : Vector3 = $Camera3D/Guns.get_child(current_gun).position
 var current_gun : Gun = Gun.BLASTER:
 	set(value):
 		current_gun = value
@@ -31,11 +34,16 @@ func _input(event):
 		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -PI/3, PI/3)
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed:
-			$Camera3D/Guns.get_child(current_gun).nozzle_burst()
-			var tween = create_tween()
-			tween.tween_property($Camera3D/Guns.get_child(current_gun), 'position', $Camera3D/Guns.get_child(current_gun).position + Vector3(0,0,0.1), 0.1)
-			tween.tween_property($Camera3D/Guns.get_child(current_gun), 'position', $Camera3D/Guns.get_child(current_gun).position, 0.2)
-			
+			var active_gun = $Camera3D/Guns.get_child(current_gun)
+			if active_gun.name == "Blaster":
+				$BlasterShoot.play()
+			elif active_gun.name == "DualShooter":
+				$RepeaterShooter.play()
+
+			active_gun.nozzle_burst()
+			var tween = create_tween().set_trans(Tween.TRANS_QUAD)
+			tween.tween_property(active_gun, "position", default_gun_pos + Vector3(0, 0, 0.1), 0.05)
+			tween.tween_property(active_gun, "position", default_gun_pos, 0.1)
 			var collider = $Camera3D/RayCast3D.get_collider()
 			if collider:
 				var impact = impact_animation.instantiate()
@@ -45,22 +53,25 @@ func _input(event):
 				impact.look_at($Camera3D.global_transform.origin)
 				if 'hit' in collider:
 					collider.hit()
-				
-				
-				
-				
+
+
+
 func get_input():
 	direction = Input.get_vector('left','right','forward','backward').rotated(-$Camera3D.global_rotation.y)
 	velocity.x = direction.x * speed
 	velocity.z = direction.y * speed
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
-	
+
+		
 	if Input.is_action_just_pressed('toggle_weapon'):
 		current_gun = posmod(current_gun + 1, Gun.size()) as Gun
+		$WeaponChange.play()
 	
 	if Input.is_action_just_pressed("jump"):
-		velocity.y = jump_strength
+		if is_on_floor():
+			$Jump.play()
+			velocity.y = jump_strength
 	
 func apply_gravity(delta):
 	if not is_on_floor():
@@ -73,4 +84,14 @@ func _physics_process(delta: float)-> void:
 	$Camera3D/RayCast3D.get_collider()
 
 func hit():
-	pass
+	health -= 5
+	get_tree().get_first_node_in_group('ui').change_health(health)
+	if health <= 0:
+		get_tree().quit()
+
+func _unhandled_input(event):
+	if event.is_action_pressed('reset'):
+		set_process(false)
+		set_physics_process(false)
+		get_tree().reload_current_scene()
+		return

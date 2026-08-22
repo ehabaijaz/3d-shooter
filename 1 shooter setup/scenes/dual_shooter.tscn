@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ih442nrtjhmv"]
 
-[ext_resource type="PackedScene" uid="uid://dooeo60btv125" path="res://gun.tscn" id="1_nahqr"]
+[ext_resource type="PackedScene" uid="uid://dooeo60btv125" path="res://scenes/gun.tscn" id="1_nahqr"]
 [ext_resource type="PackedScene" uid="uid://dd3oln1ucgqpd" path="res://models/dual-shooter.glb" id="2_026ex"]
 [ext_resource type="Texture2D" uid="uid://csut3ovk0uh0b" path="res://sprites/nozzle_burst.png" id="3_708q8"]
 

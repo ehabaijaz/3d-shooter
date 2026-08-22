@@ -1,11 +1,15 @@
 [gd_scene format=4 uid="uid://botxu41putvxb"]
 
-[ext_resource type="Script" uid="uid://dcy5is3cn0kpk" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://dcy5is3cn0kpk" path="res://scripts/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://b5hxnjwvrxuji" path="res://models/Textures/colormap.png" id="2_4gyqm"]
 [ext_resource type="Shader" uid="uid://duqklnitix204" path="res://flash.tres" id="3_iifgy"]
 [ext_resource type="Texture2D" uid="uid://csut3ovk0uh0b" path="res://sprites/nozzle_burst.png" id="3_qi2p4"]
+[ext_resource type="AudioStream" uid="uid://d2lkv16r8knxn" path="res://audio/enemy_attack.ogg" id="5_3yqyl"]
+[ext_resource type="AudioStream" uid="uid://crxvvqxeif0so" path="res://audio/enemy_hurt.ogg" id="6_wujgv"]
+[ext_resource type="AudioStream" uid="uid://ug14oraloakc" path="res://audio/enemy_destroy.ogg" id="7_wujgv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iifgy"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_iifgy")
 shader_parameter/Color = Color(1, 1, 1, 1)
@@ -52,6 +56,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_d108p")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3yqyl"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_iifgy")
 shader_parameter/Color = Color(1, 1, 1, 1)
@@ -92,6 +97,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_28etn")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wujgv"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_iifgy")
 shader_parameter/Color = Color(1, 1, 1, 1)
@@ -132,6 +138,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pqxnc")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_epg4t"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_iifgy")
 shader_parameter/Color = Color(1, 1, 1, 1)
@@ -175,7 +182,7 @@ shadow_mesh = SubResource("ArrayMesh_n2siq")
 size = Vector3(1.052124, 0.77008057, 0.7246704)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qi2p4"]
-radius = 10.0
+radius = 15.0
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1982860416]
 collision_layer = 4
@@ -211,7 +218,6 @@ mesh = SubResource("ArrayMesh_1725w")
 skeleton = NodePath("")
 
 [node name="NozzleBurst" type="Node3D" parent="Skin" unique_id=1483365527]
-visible = false
 
 [node name="Sprite3D" type="Sprite3D" parent="Skin/NozzleBurst" unique_id=1265933271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45139766, 0.29972833, 0.44738445)
@@ -234,6 +240,15 @@ shape = SubResource("SphereShape3D_qi2p4")
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=2043294163]
 wait_time = 1.5
+
+[node name="AttackSound" type="AudioStreamPlayer3D" parent="." unique_id=312804679]
+stream = ExtResource("5_3yqyl")
+
+[node name="HurtSound" type="AudioStreamPlayer3D" parent="." unique_id=1825755177]
+stream = ExtResource("6_wujgv")
+
+[node name="KillSound" type="AudioStreamPlayer3D" parent="." unique_id=2135385000]
+stream = ExtResource("7_wujgv")
 
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]

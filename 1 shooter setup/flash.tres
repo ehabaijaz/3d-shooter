@@ -10,6 +10,7 @@ hint = 1
 default_value_enabled = true
 
 [resource]
+resource_local_to_scene = true
 nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_cr46e")
 nodes/fragment/2/position = Vector2(16, 96)
 nodes/fragment/3/node = SubResource("VisualShaderNodeFloatParameter_cr46e")

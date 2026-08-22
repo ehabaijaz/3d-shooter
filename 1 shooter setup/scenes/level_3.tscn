@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://6d45h61wqp07"]
+
+[ext_resource type="PackedScene" uid="uid://d0d3n68s8wabo" path="res://scenes/game.tscn" id="1_h23n6"]
+[ext_resource type="PackedScene" uid="uid://botxu41putvxb" path="res://scenes/enemy.tscn" id="2_1pn4d"]
+[ext_resource type="PackedScene" uid="uid://ca66ek5a3153i" path="res://scenes/platform_large.tscn" id="2_uwxec"]
+[ext_resource type="PackedScene" uid="uid://cmhmvnadsysl3" path="res://scenes/platform_falling.tscn" id="4_ah8om"]
+
+[node name="Level 3" unique_id=413540681 instance=ExtResource("1_h23n6")]
+
+[node name="Enemy2" parent="Characters" parent_id_path=PackedInt32Array(1479130507) index="2" unique_id=1982860416 instance=ExtResource("2_1pn4d")]
+transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, -3.5398276, 1.2945302, -14.696571)
+
+[node name="Enemy3" parent="Characters" parent_id_path=PackedInt32Array(1479130507) index="3" unique_id=1515559234 instance=ExtResource("2_1pn4d")]
+transform = Transform3D(-2.7818132e-08, 0, 1, 0, 1, 0, -1, 0, -2.7818132e-08, 4.588643, 0.64403415, -15.232213)
+
+[node name="Enemy4" parent="Characters" parent_id_path=PackedInt32Array(1479130507) index="4" unique_id=1624911699 instance=ExtResource("2_1pn4d")]
+transform = Transform3D(-0.9984476, 0, 0.055699524, 0, 1, 0, -0.055699524, 0, -0.9984476, 0.26777387, 0.1612804, -18.674686)
+
+[node name="PlatformLarge3" parent="Terrain" parent_id_path=PackedInt32Array(82722763) index="1" unique_id=1381492469 instance=ExtResource("2_uwxec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.883773)
+
+[node name="PlatformLarge2" parent="Terrain" parent_id_path=PackedInt32Array(82722763) index="2" unique_id=2072711021 instance=ExtResource("2_uwxec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.251447, 0, 0)
+
+[node name="Enemy2" parent="." index="15" unique_id=460149250]
+transform = Transform3D(0.009170725, 0.009296664, -0.99991477, -0.010173396, 0.9999058, 0.009203258, 0.9999063, 0.010088112, 0.009264458, -13.648382, 0.97255754, -0.32129097)
+
+[node name="Platform2" parent="." index="16" unique_id=2143548941 instance=ExtResource("4_ah8om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9689543, 0, 0.08113384)
+
+[node name="Platform3" parent="." index="17" unique_id=1912346303 instance=ExtResource("4_ah8om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4336872, 0, -9.293005)
+
+[node name="Platform4" parent="." index="18" unique_id=44013067 instance=ExtResource("4_ah8om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5381184, 0, -1.0504827)

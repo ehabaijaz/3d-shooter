@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://fu1amsumtj2d"]
+
+[ext_resource type="Script" uid="uid://o8lug1by2ccg" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://cyd8qrbk48hb3" path="res://scenes/impact.tscn" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://cfhuo8e7sk3nx" path="res://sprites/crosshair.png" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://cqk4k08fy0uhv" path="res://scenes/blaster.tscn" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://ih442nrtjhmv" path="res://scenes/dual_shooter.tscn" id="5_sweqy"]
+[ext_resource type="Texture2D" uid="uid://b7pbo2461l5me" path="res://sprites/shadow.webp" id="6_2hs0m"]
+[ext_resource type="AudioStream" uid="uid://g04ncx74d7ow" path="res://audio/jump_a.ogg" id="7_b26j0"]
+[ext_resource type="AudioStream" uid="uid://3pesxng7tvcf" path="res://audio/jump_b.ogg" id="8_n7ghd"]
+[ext_resource type="AudioStream" uid="uid://dspam5lubqufh" path="res://audio/jump_c.ogg" id="9_nvl01"]
+[ext_resource type="AudioStream" uid="uid://mb6r1raj2gv" path="res://audio/blaster.ogg" id="10_n7ghd"]
+[ext_resource type="AudioStream" uid="uid://bd7is6bc0mk30" path="res://audio/weapon_change.ogg" id="11_ivps1"]
+[ext_resource type="AudioStream" uid="uid://byufyg8bcrw5e" path="res://audio/blaster_repeater.ogg" id="11_nvl01"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ivps1"]
+streams_count = 3
+stream_0/stream = ExtResource("7_b26j0")
+stream_1/stream = ExtResource("8_n7ghd")
+stream_2/stream = ExtResource("9_nvl01")
+
+[node name="Player" type="CharacterBody3D" unique_id=2127627102]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_4flbx")
+impact_animation = ExtResource("2_i3pqv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1285436515]
+shape = SubResource("CapsuleShape3D_sh265")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1302662011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1464185593]
+target_position = Vector3(0, 0, -20)
+collision_mask = 5
+
+[node name="Crosshair" type="Sprite3D" parent="Camera3D" unique_id=684607561]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -3.635964)
+texture = ExtResource("2_onrkg")
+
+[node name="Guns" type="Node3D" parent="Camera3D" unique_id=1198259313]
+
+[node name="Blaster" parent="Camera3D/Guns" unique_id=1236075895 instance=ExtResource("4_hqtel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -1.105, -1.04)
+max_size = Vector3(0.7, 0.7, 0.7)
+
+[node name="DualShooter" parent="Camera3D/Guns" unique_id=41218633 instance=ExtResource("5_sweqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -1.105, -1.04)
+visible = false
+max_size = Vector3(0.7, 0.7, 0.7)
+
+[node name="Decal" type="Decal" parent="." unique_id=1926395506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0530744, 0)
+texture_albedo = ExtResource("6_2hs0m")
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="." unique_id=1134993064]
+stream = SubResource("AudioStreamRandomizer_ivps1")
+
+[node name="BlasterShoot" type="AudioStreamPlayer3D" parent="." unique_id=626449530]
+stream = ExtResource("10_n7ghd")
+
+[node name="WeaponChange" type="AudioStreamPlayer3D" parent="." unique_id=1587023814]
+stream = ExtResource("11_ivps1")
+
+[node name="RepeaterShooter" type="AudioStreamPlayer3D" parent="." unique_id=1830583585]
+stream = ExtResource("11_nvl01")
