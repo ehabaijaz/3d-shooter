@@ -1,6 +1,6 @@
 # A random 3D Shooter
-This is a basic 3D shooter with a dark mode option so i could submit it to the 3AM YSWS.
-
+This is a basic 3D shooter with a dark mode option so i could submit it to the 3AM YSWS. You have a laser gun and a rifle and both of them work the same. They got recoil, they got pew pew sounds I mean what more could you want. Theres also a bunch of platforms to jump which is especially useful in the last level. There are 4 levels and an ending screen. Theres grass on some platforms, theres some walls on some platforms, theres clouds, theres a bunch of really nice clouds I actually think the clouds really make the world. Also, the dark mode's lighting I thought it wouldn't fit but it really fits, it actually works well. I thought i would add a omnilight to the player as it would be too dark but it ain't too dark so thats good. 
+Any tips well try to attack the enemies fast and in the final level at a distance cuz your health is gonna go down REALLY fast. Yeah this is the story of this shooter I made in 6 hours and 41 minutes or 7 hours if it gets rounded off I wonder if it will get rounded off or not tbh. Round it of PLEASEE!
 # Controls
 WASD: Movement 
 Spacebar: Jump
