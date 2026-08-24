@@ -2,8 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://d0d3n68s8wabo" path="res://scenes/game.tscn" id="1_fi6aj"]
 [ext_resource type="PackedScene" uid="uid://botxu41putvxb" path="res://scenes/enemy.tscn" id="2_kaf1w"]
+[ext_resource type="PackedScene" uid="uid://ca66ek5a3153i" path="res://scenes/platform_large.tscn" id="3_nwj6o"]
+[ext_resource type="PackedScene" uid="uid://cmhmvnadsysl3" path="res://scenes/platform_falling.tscn" id="4_tnm2q"]
+[ext_resource type="PackedScene" uid="uid://das5fosq6auoe" path="res://models/grass-small.glb" id="5_okvcj"]
+[ext_resource type="PackedScene" uid="uid://beaer7x07yif6" path="res://models/grass.glb" id="6_thyo6"]
+[ext_resource type="PackedScene" uid="uid://g2w2608bc2dy" path="res://models/cloud.glb" id="7_mud52"]
 
 [node name="Finale" unique_id=413540681 instance=ExtResource("1_fi6aj")]
+next_scene_path = "res://scenes/bye.tscn"
 
 [node name="Enemy" parent="Characters" parent_id_path=PackedInt32Array(1479130507) index="1" unique_id=1982860416]
 transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, 3.3031669, 1.9036632, 0)
@@ -76,3 +82,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.971054, 0.9852954, -5.24083
 
 [node name="Enemy13" parent="." index="35" unique_id=342412918 instance=ExtResource("2_kaf1w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5241594, 0.9852954, 5.254607)
+
+[node name="PlatformLarge2" parent="." index="39" unique_id=1381492469 instance=ExtResource("3_nwj6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.768795, 0, 34.324028)
+
+[node name="Platform2" parent="." index="40" unique_id=2143548941 instance=ExtResource("4_tnm2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8907847, 0, 19.176327)
+
+[node name="Platform3" parent="." index="41" unique_id=2056565057 instance=ExtResource("4_tnm2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1802354, 0, 26.744787)
+
+[node name="Platform4" parent="." index="42" unique_id=2070720032 instance=ExtResource("4_tnm2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6878896, 0, 22.454624)
+
+[node name="PlatformLarge3" parent="." index="43" unique_id=2069920647 instance=ExtResource("3_nwj6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34831715, 0, 42.660774)
+
+[node name="grass-small" parent="." index="44" unique_id=940152268 instance=ExtResource("5_okvcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18063354, 0.5, 32.927505)
+
+[node name="grass-small2" parent="." index="45" unique_id=179444376 instance=ExtResource("5_okvcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9992623, 0.5, 32.688667)
+
+[node name="grass-small3" parent="." index="46" unique_id=632152133 instance=ExtResource("5_okvcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.095632, 0.49999905, 35.982197)
+
+[node name="grass-small4" parent="." index="47" unique_id=545174328 instance=ExtResource("5_okvcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2848568, 0.5, 36.018074)
+
+[node name="grass" parent="." index="48" unique_id=1793346300 instance=ExtResource("6_thyo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5876169, 0.5, 34.133904)
+
+[node name="grass2" parent="." index="49" unique_id=683758257 instance=ExtResource("6_thyo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44983673, 0.49999905, 42.03534)
+
+[node name="grass-small5" parent="." index="50" unique_id=1668006581 instance=ExtResource("5_okvcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5019984, 0.49999905, 43.183792)
+
+[node name="grass3" parent="." index="51" unique_id=924806971 instance=ExtResource("6_thyo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7981205, 0, 38.506035)
+
+[node name="cube7" parent="." index="52" unique_id=103690218 instance=ExtResource("7_mud52")]
+transform = Transform3D(1, 0, 0, 0, 0.8594689, 0.5111881, 0, -0.5111881, 0.8594689, 3.5073652, -9.536743e-07, 29.485085)
+
+[node name="cube8" parent="." index="53" unique_id=818669668 instance=ExtResource("7_mud52")]
+transform = Transform3D(1, 0, 0, 0, 0.9105322, 0.41343817, 0, -0.41343817, 0.9105322, -5.2033815, 0, 29.184448)
+
+[node name="cube9" parent="." index="54" unique_id=28993372 instance=ExtResource("7_mud52")]
+transform = Transform3D(1, 0, 0, 0, 0.7131281, 0.7010337, 0, -0.7010337, 0.7131281, 7.4146748, 0, 24.248974)
+
+[node name="cube10" parent="." index="55" unique_id=858055397 instance=ExtResource("7_mud52")]
+transform = Transform3D(1, 0, 0, 0, 0.9738849, 0.22704227, 0, -0.22704227, 0.9738849, 10.776145, 0, 6.160894)

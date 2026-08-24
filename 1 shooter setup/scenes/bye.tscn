@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cmf62rcf7j1yo"]
+
+[node name="Bye" type="Control" unique_id=1948202433]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=791965230]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=17062229]
+layout_mode = 0
+offset_right = 1273.0
+offset_bottom = 431.0
+theme_override_font_sizes/font_size = 50
+text = "byebye 
+p.s: wouldve done some more if it was extended BUT AM EXCITED FOR V2
+DARK MODE  = DARK = 3AM APPROVE LES GO
+ PLEASE DONT REJECT MY HOURS 
+TYSM FOR PLAYING THIS GAME"

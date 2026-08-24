@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dst45t8acncfp"]
+
+[ext_resource type="Script" uid="uid://cjd5rm81uqot2" path="res://scenes/dark_mode_button_layer.gd" id="1_oi4rx"]
+
+[node name="DarkModeButtonLayer" type="CanvasLayer" unique_id=888754619]
+layer = 10
+script = ExtResource("1_oi4rx")
+
+[node name="ToggleButton" type="Button" parent="." unique_id=1786717775]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_right = -75.0
+offset_bottom = 101.0
+grow_horizontal = 0
+mouse_filter = 2
+text = "Dark Mode
+Press E to pres"

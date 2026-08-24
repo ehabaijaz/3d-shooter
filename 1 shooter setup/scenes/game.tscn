@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0d3n68s8wabo"]
 
 [ext_resource type="PackedScene" uid="uid://fu1amsumtj2d" path="res://scenes/player.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://dbbj6mwel5yv6" path="res://scenes/game.gd" id="1_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://botxu41putvxb" path="res://scenes/enemy.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://beaer7x07yif6" path="res://models/grass.glb" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://c3ra7gob87m0g" path="res://scenes/ui.tscn" id="4_fc0e3"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://g2w2608bc2dy" path="res://models/cloud.glb" id="5_vef74"]
 [ext_resource type="PackedScene" uid="uid://ttbna7whrrgo" path="res://scenes/wall_high.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://cmhmvnadsysl3" path="res://scenes/platform_falling.tscn" id="9_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://dst45t8acncfp" path="res://scenes/dark_mode_button_layer.tscn" id="10_vtaks"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mwb40"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,12 +28,17 @@ ambient_light_color = Color(0.5411765, 0.5411765, 0.5411765, 1)
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="Game" type="Node3D" unique_id=413540681]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvpfn"]
+size = Vector3(7.2495117, 300.63803, 1151.3053)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1170798058]
+[node name="Game" type="Node3D" unique_id=413540681]
+script = ExtResource("1_kvpfn")
+next_scene_path = "res://scenes/level_2.tscn"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1170798058 groups=["world_environment"]]
 environment = SubResource("Environment_e2o6t")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1232547340]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1232547340 groups=["world_light"]]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
@@ -108,3 +115,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28270054, 0.9852954, -4.810
 
 [node name="Enemy2" parent="." unique_id=460149250 instance=ExtResource("2_feb5d")]
 transform = Transform3D(0.9999062, 0.010088111, 0.009264501, -0.010173396, 0.9999058, 0.009203258, -0.009170769, -0.009296664, 0.99991477, -5.3553305, 0.97255754, -0.32129097)
+
+[node name="DarkModeButtonLayer" parent="." unique_id=888754619 instance=ExtResource("10_vtaks")]
+
+[node name="DieArea" type="Area3D" parent="." unique_id=179243163]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DieArea" unique_id=329610041]
+transform = Transform3D(0.01939252, 0.9979445, -0.061081093, -0.9998088, 0.019198269, -0.0037651416, -0.0025847682, 0.061142415, 0.9981257, 34.210228, -59.316433, -521.0055)
+shape = SubResource("BoxShape3D_kvpfn")
+debug_color = Color(0.9063994, 0.00013264835, 0.74517876, 0.41960785)
+
+[connection signal="body_entered" from="DieArea" to="." method="_on_die_area_body_entered"]

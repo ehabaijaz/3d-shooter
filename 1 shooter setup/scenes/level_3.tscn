@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmhmvnadsysl3" path="res://scenes/platform_falling.tscn" id="4_ah8om"]
 
 [node name="Level 3" unique_id=413540681 instance=ExtResource("1_h23n6")]
+next_scene_path = "res://scenes/finale.tscn"
 
 [node name="Enemy2" parent="Characters" parent_id_path=PackedInt32Array(1479130507) index="2" unique_id=1982860416 instance=ExtResource("2_1pn4d")]
 transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, -3.5398276, 1.2945302, -14.696571)

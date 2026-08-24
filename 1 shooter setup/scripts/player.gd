@@ -6,7 +6,7 @@ var mouse_acceleration := Vector2(0.001,0.001)
 enum Gun {BLASTER,DUAL}
 var jump_strength := 8.0
 var gravity := 10.0
-var health := 100
+var health = 100
 
 @onready var default_gun_pos : Vector3 = $Camera3D/Guns.get_child(current_gun).position
 var current_gun : Gun = Gun.BLASTER:
@@ -84,10 +84,13 @@ func _physics_process(delta: float)-> void:
 	$Camera3D/RayCast3D.get_collider()
 
 func hit():
-	health -= 5
+	if get_tree().current_scene.scene_file_path == "res://scenes/finale.tscn":
+		health -= 2
+	else:
+		health -= 5
 	get_tree().get_first_node_in_group('ui').change_health(health)
 	if health <= 0:
-		get_tree().quit()
+		get_tree().reload_current_scene()
 
 func _unhandled_input(event):
 	if event.is_action_pressed('reset'):
