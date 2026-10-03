@@ -12,8 +12,16 @@ Also theres a bunch of sounds..
 Made in Godot!!!!!!!!!
 
 # Pic of project
-- Heres a pic of the project
+- Heres a pic of the project BEFORE dark mode was implemented
 <img width="1673" height="901" alt="Screenshot 2026-08-24 223337" src="https://github.com/user-attachments/assets/8affc774-1063-4234-b462-9a22e5ba86eb" />
+
+
+- Here is a VID of the project AFTER dark mode was implemented (its cropped)
+  
+
+https://github.com/user-attachments/assets/bcc3c42f-ba46-4290-94bc-2e2a427009af
+
+
 
 # Stuff this project taught me
 - This project taught me about Autoloads which is very cool and very useful.
