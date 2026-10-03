@@ -21,7 +21,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DarkModeManager="*uid://2g42fhe8o2js"
 LevelManager="*uid://dw1nfcr2ig1ul"
 
 [display]

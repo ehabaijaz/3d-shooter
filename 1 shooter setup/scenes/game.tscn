@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://g2w2608bc2dy" path="res://models/cloud.glb" id="5_vef74"]
 [ext_resource type="PackedScene" uid="uid://ttbna7whrrgo" path="res://scenes/wall_high.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://cmhmvnadsysl3" path="res://scenes/platform_falling.tscn" id="9_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://dst45t8acncfp" path="res://scenes/dark_mode_button_layer.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://bjkr4fcxdfods" path="res://PumpkinV1.glb" id="11_kvuet"]
+[ext_resource type="PackedScene" uid="uid://clhatdilqy7g1" path="res://PumpkinV2.glb" id="12_trtic"]
+[ext_resource type="PackedScene" uid="uid://cnsw4erub6312" path="res://PumpkinV3.glb" id="13_ir15t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mwb40"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,10 +23,11 @@ sky_material = SubResource("ProceduralSkyMaterial_mwb40")
 
 [sub_resource type="Environment" id="Environment_e2o6t"]
 background_mode = 1
-background_color = Color(0.49019608, 0.5803922, 0.9372549, 1)
+background_color = Color(0.0014836661, 0.0023652099, 0.017167104, 1)
 sky = SubResource("Sky_80nbo")
 ambient_light_source = 2
-ambient_light_color = Color(0.5411765, 0.5411765, 0.5411765, 1)
+ambient_light_color = Color(0.8500798, 0.47839117, 0.1532793, 1)
+ambient_light_energy = 0.2
 tonemap_mode = 2
 glow_enabled = true
 
@@ -116,8 +119,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28270054, 0.9852954, -4.810
 [node name="Enemy2" parent="." unique_id=460149250 instance=ExtResource("2_feb5d")]
 transform = Transform3D(0.9999062, 0.010088111, 0.009264501, -0.010173396, 0.9999058, 0.009203258, -0.009170769, -0.009296664, 0.99991477, -5.3553305, 0.97255754, -0.32129097)
 
-[node name="DarkModeButtonLayer" parent="." unique_id=888754619 instance=ExtResource("10_vtaks")]
-
 [node name="DieArea" type="Area3D" parent="." unique_id=179243163]
 collision_layer = 0
 collision_mask = 2
@@ -126,5 +127,14 @@ collision_mask = 2
 transform = Transform3D(0.01939252, 0.9979445, -0.061081093, -0.9998088, 0.019198269, -0.0037651416, -0.0025847682, 0.061142415, 0.9981257, 34.210228, -59.316433, -521.0055)
 shape = SubResource("BoxShape3D_kvpfn")
 debug_color = Color(0.9063994, 0.00013264835, 0.74517876, 0.41960785)
+
+[node name="PumpkinV12" parent="." unique_id=327445302 instance=ExtResource("11_kvuet")]
+transform = Transform3D(3.9626727, 0, -3.0491352, 0, 5, 0, 3.0491352, 0, 3.9626727, 1.6418165, 0.5, -1.4561675)
+
+[node name="PumpkinV22" parent="." unique_id=1224754497 instance=ExtResource("12_trtic")]
+transform = Transform3D(-4.9965806, 0, -0.18487605, 0, 5, 0, 0.18487605, 0, -4.9965806, -0.2079978, 0.49999952, 12.927806)
+
+[node name="PumpkinV32" parent="." unique_id=1197496511 instance=ExtResource("13_ir15t")]
+transform = Transform3D(-3.4308062, 0, 3.6372473, 0, 5, 0, -3.6372473, 0, -3.4308062, -4.245515, 0.5000005, 12.094478)
 
 [connection signal="body_entered" from="DieArea" to="." method="_on_die_area_body_entered"]

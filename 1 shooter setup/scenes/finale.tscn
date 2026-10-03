@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://das5fosq6auoe" path="res://models/grass-small.glb" id="5_okvcj"]
 [ext_resource type="PackedScene" uid="uid://beaer7x07yif6" path="res://models/grass.glb" id="6_thyo6"]
 [ext_resource type="PackedScene" uid="uid://g2w2608bc2dy" path="res://models/cloud.glb" id="7_mud52"]
+[ext_resource type="PackedScene" uid="uid://bjkr4fcxdfods" path="res://PumpkinV1.glb" id="8_kmf7h"]
+[ext_resource type="PackedScene" uid="uid://clhatdilqy7g1" path="res://PumpkinV2.glb" id="9_2f44b"]
+[ext_resource type="PackedScene" uid="uid://cnsw4erub6312" path="res://PumpkinV3.glb" id="10_njrq3"]
+[ext_resource type="PackedScene" uid="uid://caw3bnufxgbw" path="res://PumpkinV5.glb" id="11_5rhw0"]
+[ext_resource type="PackedScene" uid="uid://mygo1aqp58p5" path="res://PumpkinV4.glb" id="12_fw2ij"]
 
 [node name="Finale" unique_id=413540681 instance=ExtResource("1_fi6aj")]
 next_scene_path = "res://scenes/bye.tscn"
@@ -133,3 +138,42 @@ transform = Transform3D(1, 0, 0, 0, 0.7131281, 0.7010337, 0, -0.7010337, 0.71312
 
 [node name="cube10" parent="." index="55" unique_id=858055397 instance=ExtResource("7_mud52")]
 transform = Transform3D(1, 0, 0, 0, 0.9738849, 0.22704227, 0, -0.22704227, 0.9738849, 10.776145, 0, 6.160894)
+
+[node name="PumpkinV13" parent="." index="58" unique_id=327445302 instance=ExtResource("8_kmf7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.084080696, 0.49999812, 43.73709)
+
+[node name="PumpkinV23" parent="." index="59" unique_id=1224754497 instance=ExtResource("9_2f44b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84334326, 0.49999976, 40.91551)
+
+[node name="PumpkinV33" parent="." index="60" unique_id=1197496511 instance=ExtResource("10_njrq3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3298068, 0.5, 41.932186)
+
+[node name="PumpkinV14" parent="." index="61" unique_id=1735850633 instance=ExtResource("8_kmf7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2050862, 0.5, 41.059322)
+
+[node name="PumpkinV52" parent="." index="62" unique_id=1994880516 instance=ExtResource("11_5rhw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8134459, 0.49999976, 44.09502)
+
+[node name="PumpkinV42" parent="." index="63" unique_id=380737733 instance=ExtResource("12_fw2ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6910744, 0.5023135, 43.090416)
+
+[node name="PumpkinV34" parent="." index="64" unique_id=1714989522 instance=ExtResource("10_njrq3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38719368, 0.49999976, 41.156815)
+
+[node name="PumpkinV24" parent="." index="65" unique_id=538971257 instance=ExtResource("9_2f44b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57909703, 0.5, 42.977825)
+
+[node name="PumpkinV35" parent="." index="66" unique_id=1119674746 instance=ExtResource("10_njrq3")]
+transform = Transform3D(-19.985617, 0, 0.75834036, 0, 20, 0, -0.75834036, 0, -19.985617, -0.4947114, 0, 47.74731)
+
+[node name="PumpkinV25" parent="." index="67" unique_id=30916773 instance=ExtResource("9_2f44b")]
+transform = Transform3D(-18.751108, 0, 6.9567184, 0, 20, 0, -6.9567184, 0, -18.751108, -4.998198, 0, 47.668877)
+
+[node name="PumpkinV53" parent="." index="68" unique_id=1763734342 instance=ExtResource("11_5rhw0")]
+transform = Transform3D(-17.04587, 0, -10.461278, 0, 20, 0, 10.461278, 0, -17.04587, 4.39003, 0, 47.345444)
+
+[node name="PumpkinV43" parent="." index="69" unique_id=649929057 instance=ExtResource("12_fw2ij")]
+transform = Transform3D(-47.942474, 0, 14.195747, 0, 50, 0, -14.195747, 0, -47.942474, -1.9036078, 0, 56.05741)
+
+[node name="PumpkinV15" parent="." index="70" unique_id=1147037410 instance=ExtResource("8_kmf7h")]
+transform = Transform3D(100.000015, 0, 0, 0, 71.388626, -70.02617, 0, 70.02617, 71.388626, 3.8597183, 18.740875, -27.693203)

@@ -15,7 +15,7 @@ func _on_level_clear():
 
 func _on_die_area_body_entered(body):
 	print('yes')
-	call_deferred("_do_reload()")
+	call_deferred("_do_reload")
 
 func _do_reload():
 	get_tree().reload_current_scene()

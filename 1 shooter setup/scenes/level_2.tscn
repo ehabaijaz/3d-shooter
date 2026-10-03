@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d0d3n68s8wabo" path="res://scenes/game.tscn" id="1_3bmlt"]
 [ext_resource type="PackedScene" uid="uid://botxu41putvxb" path="res://scenes/enemy.tscn" id="2_pbc48"]
 [ext_resource type="PackedScene" uid="uid://ca66ek5a3153i" path="res://scenes/platform_large.tscn" id="3_eqxsl"]
+[ext_resource type="PackedScene" uid="uid://bjkr4fcxdfods" path="res://PumpkinV1.glb" id="4_b4j7a"]
+[ext_resource type="PackedScene" uid="uid://caw3bnufxgbw" path="res://PumpkinV5.glb" id="5_wo48x"]
 
 [node name="Level 2" unique_id=413540681 instance=ExtResource("1_3bmlt")]
 next_scene_path = "res://scenes/level_3.tscn"
@@ -30,3 +32,9 @@ transform = Transform3D(0.9999062, 0.010088111, 0.009264501, -0.010173396, 0.999
 
 [node name="PlatformLarge2" parent="." index="21" unique_id=1381492469 instance=ExtResource("3_eqxsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.517445, 0, 0.38741112)
+
+[node name="PumpkinV13" parent="." index="26" unique_id=327445302 instance=ExtResource("4_b4j7a")]
+transform = Transform3D(-3.0133247, 0, 3.9899719, 0, 5, 0, -3.9899719, 0, -3.0133247, -8.796908, 0.4999998, 1.7087836)
+
+[node name="PumpkinV52" parent="." index="27" unique_id=1994880516 instance=ExtResource("5_wo48x")]
+transform = Transform3D(4.1103735, 0, 2.8469, 0, 5, 0, -2.8469, 0, 4.1103735, -10.566857, 0.50000024, -1.6078768)
