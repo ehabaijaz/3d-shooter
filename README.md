@@ -6,7 +6,7 @@ WASD: Movement
 Spacebar: Jump
 E: Switch between 2 guns-> a laser gun and a long range rifle which feel unique.
 F: DARK MODEEEEEEEEEEEEEEEEE
-Also theres a bunch of sounds..
+Also theres a bunch of sounds.. There is also a spooky background music that is actually a certified banger.
 
 # MADE IN GODOT
 Made in Godot!!!!!!!!!
