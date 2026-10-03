@@ -1,6 +1,11 @@
 # A random 3D Shooter
 This is a basic 3D shooter with a dark mode option so i could submit it to the 3AM YSWS. You have a laser gun and a rifle and both of them work the same. They got recoil, they got pew pew sounds I mean what more could you want. Theres also a bunch of platforms to jump which is especially useful in the last level. There are 4 levels and an ending screen. Theres grass on some platforms, theres some walls on some platforms, theres clouds, theres a bunch of really nice clouds I actually think the clouds really make the world. Also, the dark mode's lighting I thought it wouldn't fit but it really fits, it actually works well. I thought i would add a omnilight to the player as it would be too dark but it ain't too dark so thats good. 
-Any tips well try to attack the enemies fast and in the final level at a distance cuz your health is gonna go down REALLY fast. Yeah this is the story of this shooter I made in 6 hours and 41 minutes or 7 hours if it gets rounded off I wonder if it will get rounded off or not tbh. Round it of PLEASEE!
+Any tips well try to attack the enemies fast and in the final level at a distance cuz your health is gonna go down REALLY fast. Yeah this is the story of this shooter I made in 7 hour 20 something minutes. Uhh this game is also very trippy because the laser gun feels short range and fast while the second gun feels long range and slow but its all just a psychological trick yep you have been tricked both of them do the exact same thing so yeah! 
+
+HALLOWEEN UPDATE!11!!11!11!11:
+THERES PUMPKINS NOW LOTS OF PUMPKINS IN THE FINAL LEVEL THERES MINI PUMPKINS THAT ARE SO SMALL BUT ALSO NEXT TO GIGANTIC PUMPKINS THAT ARE TERRIFYING THIS IS THE MOST HALLOWEEN YOU CAN GET. Theres also a very subtle orange tint in the world's atmosphere like a sprinkle of halloween. Another thing Ive learnt from this project halloween is really cool it actually is really cool and I will celebrate halloween every year for my life, I haven't before but I will now. The halloween vibes are COOL. I have never eaten a pumpkin in my life by the way, I could not have figured that out if not for this project! This project has changed my life. LITERALLY. it has.
+
+
 # Controls
 WASD: Movement 
 Spacebar: Jump
