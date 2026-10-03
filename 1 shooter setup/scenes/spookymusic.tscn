@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://djiejd3ick7gj"]
+
+[ext_resource type="AudioStream" uid="uid://c8ub33s4i7owd" path="res://spookymusic.mp3" id="1_ku3au"]
+
+[node name="Spookymusic" type="AudioStreamPlayer" unique_id=999925093]
+stream = ExtResource("1_ku3au")
+autoplay = true

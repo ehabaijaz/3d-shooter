@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelManager="*uid://dw1nfcr2ig1ul"
+Spookymusic="*uid://djiejd3ick7gj"
 
 [display]
 
